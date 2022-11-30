@@ -56,9 +56,9 @@
 					"behaviors": {
 						"Platform": {
 							"properties": {
-								"max-speed": 500000,
-								"acceleration": 1500,
-								"deceleration": 1500,
+								"max-speed": 500,
+								"acceleration": 1000,
+								"deceleration": 1000,
 								"jump-strength": 0,
 								"gravity": 1500,
 								"max-fall-speed": 1000,
@@ -107,11 +107,11 @@
 							"properties": {
 								"immovable": false,
 								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
+								"prevent-rotation": true,
 								"density": 1,
 								"friction": 0.5,
 								"elasticity": 0.2,
-								"linear-damping": 4,
+								"linear-damping": 6,
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": true
@@ -136,9 +136,9 @@
 					}
 				},
 				{
-					"type": "TimerFood",
+					"type": "FoodCounter",
 					"properties": {
-						"text": "30",
+						"text": "Collect: 10",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 20,

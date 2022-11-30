@@ -2,6 +2,10 @@
 	"name": "Food Minigame Events",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Timer Attributes"
+		},
+		{
 			"eventType": "variable",
 			"name": "currentTime",
 			"type": "number",
@@ -22,6 +26,172 @@
 			"sid": 668825367836090
 		},
 		{
+			"eventType": "comment",
+			"text": "How much food the player must collect before continuing on to the next minigame"
+		},
+		{
+			"eventType": "variable",
+			"name": "foodToCollect",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 281513834468450
+		},
+		{
+			"eventType": "variable",
+			"name": "foodCollected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 577325451683922
+		},
+		{
+			"eventType": "comment",
+			"text": "Stores whether the last food spawned was healthy or not (Used to alternate spawning healthy and unhealthy foods)"
+		},
+		{
+			"eventType": "variable",
+			"name": "wasLastFoodHealthy",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 817651165684900
+		},
+		{
+			"eventType": "comment",
+			"text": "Player's current cholesterol penalty"
+		},
+		{
+			"eventType": "variable",
+			"name": "maxRecommendedPenalty",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 407157900555480
+		},
+		{
+			"eventType": "variable",
+			"name": "cholesterolPenalty",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 147060688713276
+		},
+		{
+			"eventType": "comment",
+			"text": "Food Penalties (no entry for orange or apple since their penalty is zero"
+		},
+		{
+			"eventType": "variable",
+			"name": "steakPenalty",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 699113987291498
+		},
+		{
+			"eventType": "variable",
+			"name": "friedchickenPenalty",
+			"type": "number",
+			"initialValue": "90",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 874500371221830
+		},
+		{
+			"eventType": "variable",
+			"name": "bigmacPenalty",
+			"type": "number",
+			"initialValue": "80",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 699000580922255
+		},
+		{
+			"eventType": "variable",
+			"name": "icecreamPenalty",
+			"type": "number",
+			"initialValue": "70",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 325018133461798
+		},
+		{
+			"eventType": "variable",
+			"name": "frenchfriesPenalty",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 139942272184704
+		},
+		{
+			"eventType": "variable",
+			"name": "microwavepopcornPenalty",
+			"type": "number",
+			"initialValue": "40",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 909477835745062
+		},
+		{
+			"eventType": "variable",
+			"name": "salmonPenalty",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 993093483114665
+		},
+		{
+			"eventType": "variable",
+			"name": "peanutsPenalty",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 766087243124683
+		},
+		{
+			"eventType": "variable",
+			"name": "beansPenalty",
+			"type": "number",
+			"initialValue": "7",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 855968727627356
+		},
+		{
+			"eventType": "variable",
+			"name": "ricePenalty",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 690895816102633
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -34,15 +204,6 @@
 				{
 					"type": "comment",
 					"text": "Show and set timer on layout start"
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 497056458543208,
-					"parameters": {
-						"variable": "currentTime",
-						"value": "minigameTimeLength"
-					}
 				}
 			],
 			"sid": 670802842258538
@@ -63,10 +224,10 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "TimerFood",
-					"sid": 249823835095589,
+					"objectClass": "FoodCounter",
+					"sid": 787249064464497,
 					"parameters": {
-						"text": "currentTime"
+						"text": "\"Collect: \" & foodToCollect - foodCollected"
 					}
 				}
 			],
@@ -78,11 +239,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 216559779109739,
+					"sid": 370465912216759,
 					"parameters": {
-						"variable": "currentTime",
-						"comparison": 3,
-						"value": "0"
+						"variable": "foodCollected",
+						"comparison": 5,
+						"value": "foodToCollect"
 					}
 				}
 			],
@@ -108,66 +269,36 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 921541189067293,
+					"sid": 473481112898616,
 					"parameters": {
-						"interval-seconds": "1.0"
+						"interval-seconds": "0.4"
 					}
 				}
 			],
 			"actions": [
 				{
 					"type": "comment",
-					"text": "Update timer every second"
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 738124959237653,
-					"parameters": {
-						"variable": "currentTime",
-						"value": "currentTime - 1"
-					}
-				},
-				{
-					"type": "comment",
-					"text": "Drop some food haha"
+					"text": "Drop new food every 0.5 seconds"
 				},
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 737501480995416,
+					"sid": 669283378697469,
 					"parameters": {
 						"object-to-create": "FoodSprite",
 						"layer": "0",
 						"x": "random(10, 844)",
-						"y": "-10",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 390463432608807,
-					"parameters": {
-						"seconds": ".5"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 431224810015563,
-					"parameters": {
-						"object-to-create": "FoodSprite",
-						"layer": "0",
-						"x": "random(10, 844)",
-						"y": "-10",
+						"y": "-20",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
 				}
 			],
 			"sid": 473995366391179
+		},
+		{
+			"eventType": "comment",
+			"text": "When a new food is created"
 		},
 		{
 			"eventType": "block",
@@ -178,17 +309,379 @@
 					"sid": 499372182219744
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 482688645346630,
+			"children": [
 				{
-					"id": "set-animation-frame",
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 620598985317069,
+							"parameters": {
+								"first-value": "wasLastFoodHealthy",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Spawn low cholesterol food"
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 397355347590437,
+							"parameters": {
+								"frame-number": "random(0,5)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 101258006981523,
+							"parameters": {
+								"variable": "wasLastFoodHealthy",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 408411821609645
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 982646467231835
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Spawn high cholesterol food"
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 876352420525578,
+							"parameters": {
+								"frame-number": "random(6,11)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 864771064202734,
+							"parameters": {
+								"variable": "wasLastFoodHealthy",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 301332020793676
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When player collects food"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
 					"objectClass": "FoodSprite",
-					"sid": 483807392788307,
+					"sid": 512832654123516,
 					"parameters": {
-						"frame-number": "random(0,4)"
+						"object": "PlayerSprite"
 					}
 				}
 			],
-			"sid": 482688645346630
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "FoodSprite",
+					"sid": 172662028194639
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 762863913649868,
+					"parameters": {
+						"variable": "foodCollected",
+						"value": "foodCollected + 1"
+					}
+				}
+			],
+			"sid": 136814609058038,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 257449907190816,
+							"parameters": {
+								"comparison": 0,
+								"number": "11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 516037725791084,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + steakPenalty"
+							}
+						}
+					],
+					"sid": 446139832609100
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 180462671808677,
+							"parameters": {
+								"comparison": 0,
+								"number": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 397690215081894,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + friedchickenPenalty"
+							}
+						}
+					],
+					"sid": 796947899825589
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 112032783126313,
+							"parameters": {
+								"comparison": 0,
+								"number": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 208408068920838,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + bigmacPenalty"
+							}
+						}
+					],
+					"sid": 119227866012695
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 168541724787457,
+							"parameters": {
+								"comparison": 0,
+								"number": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 841500884653192,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + icecreamPenalty"
+							}
+						}
+					],
+					"sid": 550140134826000
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 402415959764619,
+							"parameters": {
+								"comparison": 0,
+								"number": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 926998662202997,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + frenchfriesPenalty"
+							}
+						}
+					],
+					"sid": 652764903062675
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 581182188615363,
+							"parameters": {
+								"comparison": 0,
+								"number": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 356407531575927,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + microwavepopcornPenalty"
+							}
+						}
+					],
+					"sid": 799766853182633
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 607135274333217,
+							"parameters": {
+								"comparison": 0,
+								"number": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 177329826222995,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + salmonPenalty"
+							}
+						}
+					],
+					"sid": 470243013425839
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 303418927020004,
+							"parameters": {
+								"comparison": 0,
+								"number": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 207986518941158,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + peanutsPenalty"
+							}
+						}
+					],
+					"sid": 603029709109472
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 686836293746799,
+							"parameters": {
+								"comparison": 0,
+								"number": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 683615351233168,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + beansPenalty"
+							}
+						}
+					],
+					"sid": 529977934082041
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodSprite",
+							"sid": 614492766606062,
+							"parameters": {
+								"comparison": 0,
+								"number": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 828809419995912,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"value": "cholesterolPenalty + ricePenalty"
+							}
+						}
+					],
+					"sid": 246532126389676
+				}
+			]
 		}
 	],
 	"sid": 910140943358615

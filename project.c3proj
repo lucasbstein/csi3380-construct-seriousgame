@@ -146,7 +146,7 @@
 			"Keyboard",
 			"explosion",
 			"bullet",
-			"TimerFood",
+			"FoodCounter",
 			"FoodSprite",
 			"PlayerSprite",
 			"GroundSprite",
