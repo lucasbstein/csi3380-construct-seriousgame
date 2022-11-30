@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 31700,
+	"savedWithRelease": 31702,
 	"name": "construct-gdchallenge-4-seriousgame",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -19,13 +19,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Food Minigame",
+			"Cell Minigame"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Food Minigame Events",
+			"Cell Minigame Events"
 		],
 		"subfolders": []
 	},
