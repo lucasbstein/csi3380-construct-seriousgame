@@ -15,16 +15,129 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
+					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 824438657996345
+					"sid": 755151572884109
 				}
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "Show and set timer on layout start"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 909669666373255,
+					"parameters": {
+						"variable": "currentTime",
+						"value": "minigameTimeLength"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Other stuff"
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "monster",
+					"sid": 376324428008829,
+					"parameters": {
+						"angle": "random(360)"
+					}
+				}
+			],
+			"sid": 212152066541909
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 806993940458290,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update timer every second"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 938268967027254,
+					"parameters": {
+						"variable": "currentTime",
+						"value": "currentTime - 1"
+					}
+				}
+			],
+			"sid": 331351003709165
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 596134091860574,
+					"parameters": {
+						"variable": "currentTime",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Hide timer and change scenes when it hits 0"
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 562030096600715,
+					"parameters": {
+						"layout": "Cycle End"
+					}
+				}
+			],
+			"sid": 204007201464706
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 937253821998285
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update timer text every tick"
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TimerCell",
+					"sid": 427174295574846,
+					"parameters": {
+						"text": "currentTime"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Do minigame stuff"
+				},
+				{
 					"id": "set-angle-toward-position",
 					"objectClass": "player",
-					"sid": 580398778069594,
+					"sid": 490669154712224,
 					"parameters": {
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
@@ -32,14 +145,14 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "Text",
-					"sid": 937489775047111,
+					"objectClass": "Score",
+					"sid": 774406672952283,
 					"parameters": {
 						"text": "\"Score: \" & Score"
 					}
 				}
 			],
-			"sid": 589391556694194
+			"sid": 558961683089102
 		},
 		{
 			"eventType": "block",
@@ -109,27 +222,6 @@
 				}
 			],
 			"sid": 360263313651711
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 550611387884014
-				}
-			],
-			"actions": [
-				{
-					"id": "set-angle",
-					"objectClass": "monster",
-					"sid": 553687917802287,
-					"parameters": {
-						"angle": "random(360)"
-					}
-				}
-			],
-			"sid": 777434830475531
 		},
 		{
 			"eventType": "block",

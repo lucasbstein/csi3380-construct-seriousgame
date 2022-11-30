@@ -47,6 +47,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -93,19 +101,57 @@
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "wrap",
+			"name": "Wrap",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "plwxajjfktf",
 	"objectTypes": {
 		"items": [
 			"TiledBackground",
-			"Text",
+			"Score",
 			"player",
 			"Mouse",
 			"monster",
 			"Keyboard",
 			"explosion",
-			"bullet"
+			"bullet",
+			"TimerFood",
+			"FoodSprite",
+			"PlayerSprite",
+			"GroundSprite",
+			"Date",
+			"TimerCell"
 		],
 		"subfolders": []
 	},
@@ -117,15 +163,17 @@
 	},
 	"layouts": {
 		"items": [
+			"Cell Minigame",
 			"Food Minigame",
-			"Cell Minigame"
+			"Cycle End"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
+			"Cell Minigame Events",
 			"Food Minigame Events",
-			"Cell Minigame Events"
+			"Cycle End"
 		],
 		"subfolders": []
 	},

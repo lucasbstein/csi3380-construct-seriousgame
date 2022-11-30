@@ -1,5 +1,174 @@
 {
 	"name": "Food Minigame Events",
-	"events": [],
-	"sid": 565941985854644
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "currentTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 836390514949131
+		},
+		{
+			"eventType": "variable",
+			"name": "minigameTimeLength",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 668825367836090
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 851721955668963
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Show and set timer on layout start"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 497056458543208,
+					"parameters": {
+						"variable": "currentTime",
+						"value": "minigameTimeLength"
+					}
+				}
+			],
+			"sid": 670802842258538
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 649917421851397
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update timer every tick"
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TimerFood",
+					"sid": 249823835095589,
+					"parameters": {
+						"text": "currentTime"
+					}
+				}
+			],
+			"sid": 259910659375501
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 216559779109739,
+					"parameters": {
+						"variable": "currentTime",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Hide timer and change scenes when it hits 0"
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 974619724468483,
+					"parameters": {
+						"layout": "Cell Minigame"
+					}
+				}
+			],
+			"sid": 836613915067005
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 921541189067293,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update timer every second"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 738124959237653,
+					"parameters": {
+						"variable": "currentTime",
+						"value": "currentTime - 1"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Drop some food haha"
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 737501480995416,
+					"parameters": {
+						"object-to-create": "FoodSprite",
+						"layer": "0",
+						"x": "random(10, 844)",
+						"y": "-10",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 390463432608807,
+					"parameters": {
+						"seconds": ".5"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 431224810015563,
+					"parameters": {
+						"object-to-create": "FoodSprite",
+						"layer": "0",
+						"x": "random(10, 844)",
+						"y": "-10",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 473995366391179
+		}
+	],
+	"sid": 910140943358615
 }

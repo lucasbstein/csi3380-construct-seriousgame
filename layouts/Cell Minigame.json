@@ -36,7 +36,7 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
+						"zElevation": -1
 					}
 				},
 				{
@@ -426,7 +426,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Text",
+					"type": "Score",
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
@@ -455,6 +455,48 @@
 						"y": 34,
 						"width": 200,
 						"height": 37.70879663206796,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TimerCell",
+					"properties": {
+						"text": "30",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 19,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 320,
+						"y": 0,
+						"width": 192,
+						"height": 64,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -505,6 +547,6 @@
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,
-	"projection": "perspective",
+	"projection": "orthographic",
 	"eventSheet": "Cell Minigame Events"
 }
