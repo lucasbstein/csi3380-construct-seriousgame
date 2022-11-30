@@ -1,5 +1,194 @@
 {
 	"name": "Cycle End",
-	"events": [],
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Main atttributes"
+		},
+		{
+			"eventType": "variable",
+			"name": "age",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 333133677857846
+		},
+		{
+			"eventType": "variable",
+			"name": "heartAttackChance",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 190841050104559
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 429064825546090
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Increment player age"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 971269636719536,
+					"parameters": {
+						"variable": "age",
+						"value": "age + 10"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Calculate base heart attack chance increase due to age"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 479709364922826,
+					"parameters": {
+						"variable": "heartAttackChance",
+						"value": "heartAttackChance + ((age - 20) / 20)"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Calculate additional heart attack chance due to blood cholesterol levels"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 165623460510775,
+					"parameters": {
+						"variable": "heartAttackChance",
+						"value": "heartAttackChance + (clamp(cholesterolPenalty - maxRecommendedPenalty, 0, Infinity) / 25)"
+					}
+				}
+			],
+			"sid": 729976114797491,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 619235596050389,
+							"parameters": {
+								"first-value": "random(0.0,100.0)",
+								"comparison": 3,
+								"second-value": "heartAttackChance"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Kill the player (dies of heart attack)"
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Age",
+							"sid": 589142880638315,
+							"parameters": {
+								"text": "\"You died of a heart attack at \" & age"
+							}
+						}
+					],
+					"sid": 731992322432122
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 901623414812294
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Update player information on screen"
+						},
+						{
+							"callFunction": "UpdatePlayerInfo",
+							"sid": 352649042110877
+						}
+					],
+					"sid": 417721128860965
+				}
+			]
+		},
+		{
+			"functionName": "UpdatePlayerInfo",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update player information screen"
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Age",
+					"sid": 742383219838011,
+					"parameters": {
+						"text": "\"Age: \" & age"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HeartAttackChance",
+					"sid": 124242069544671,
+					"parameters": {
+						"text": "\"Heart Attack Chance:\" & heartAttackChance & \"%\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 760132399559993,
+					"parameters": {
+						"variable": "cholesterolPenalty",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 623981482000516,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 252264660334628,
+					"parameters": {
+						"layout": "Food Minigame"
+					}
+				}
+			],
+			"sid": 736940287175181
+		}
+	],
 	"sid": 451131651606405
 }

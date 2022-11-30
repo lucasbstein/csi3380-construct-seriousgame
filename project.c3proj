@@ -16,14 +16,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -42,6 +34,14 @@
 			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -139,7 +139,6 @@
 	"objectTypes": {
 		"items": [
 			"TiledBackground",
-			"Score",
 			"player",
 			"Mouse",
 			"monster",
@@ -151,7 +150,12 @@
 			"PlayerSprite",
 			"GroundSprite",
 			"Date",
-			"TimerCell"
+			"TimerCell",
+			"PenaltyCounter",
+			"Age",
+			"HeartAttackChance",
+			"LowerFat",
+			"UpperFat"
 		],
 		"subfolders": []
 	},
@@ -163,8 +167,8 @@
 	},
 	"layouts": {
 		"items": [
-			"Cell Minigame",
 			"Food Minigame",
+			"Cell Minigame",
 			"Cycle End"
 		],
 		"subfolders": []

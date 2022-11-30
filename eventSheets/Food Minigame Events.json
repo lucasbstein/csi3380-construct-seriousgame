@@ -229,6 +229,14 @@
 					"parameters": {
 						"text": "\"Collect: \" & foodToCollect - foodCollected"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PenaltyCounter",
+					"sid": 857141035096780,
+					"parameters": {
+						"text": "\"Penalty: \" & cholesterolPenalty"
+					}
 				}
 			],
 			"sid": 259910659375501
@@ -251,6 +259,15 @@
 				{
 					"type": "comment",
 					"text": "Hide timer and change scenes when it hits 0"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 839458006503102,
+					"parameters": {
+						"variable": "foodCollected",
+						"value": "0"
+					}
 				},
 				{
 					"id": "go-to-layout",

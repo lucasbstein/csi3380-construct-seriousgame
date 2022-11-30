@@ -2,14 +2,76 @@
 	"name": "Cell Minigame Events",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Number of enemies to spawn"
+		},
+		{
 			"eventType": "variable",
-			"name": "Score",
+			"name": "enemyCount",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 831956278047037
+			"sid": 901901690857590
+		},
+		{
+			"eventType": "variable",
+			"name": "enemiesSpawned",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 861662606814035
+		},
+		{
+			"eventType": "comment",
+			"text": "Spawn delay between each enemy spawn"
+		},
+		{
+			"eventType": "variable",
+			"name": "spawnDelay",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 941688151790895
+		},
+		{
+			"eventType": "comment",
+			"text": "Fire rate settings"
+		},
+		{
+			"eventType": "variable",
+			"name": "fireRate",
+			"type": "number",
+			"initialValue": "2.25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 738949697270397
+		},
+		{
+			"eventType": "variable",
+			"name": "verticalSpawnMin",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 510504776559425
+		},
+		{
+			"eventType": "variable",
+			"name": "verticalSpawnMax",
+			"type": "number",
+			"initialValue": "480",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 754227550923513
 		},
 		{
 			"eventType": "block",
@@ -35,19 +97,126 @@
 					}
 				},
 				{
-					"type": "comment",
-					"text": "Other stuff"
-				},
-				{
 					"id": "set-angle",
 					"objectClass": "monster",
 					"sid": 376324428008829,
 					"parameters": {
 						"angle": "random(360)"
 					}
+				},
+				{
+					"type": "comment",
+					"text": "Tighten fat walls based on heart attack chance"
+				},
+				{
+					"id": "set-y",
+					"objectClass": "UpperFat",
+					"sid": 817025358248717,
+					"parameters": {
+						"y": "160 * (heartAttackChance / 100)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 925854051831869,
+					"parameters": {
+						"variable": "verticalSpawnMin",
+						"value": "160 * (HeartAttackChance / 100)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "LowerFat",
+					"sid": 408223781737060,
+					"parameters": {
+						"y": "480 - (160 * (heartAttackChance / 100))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 636531691144351,
+					"parameters": {
+						"variable": "verticalSpawnMax",
+						"value": "480 - (160 * (HeartAttackChance / 100))"
+					}
 				}
 			],
-			"sid": 212152066541909
+			"sid": 212152066541909,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Calculate and set enemy count"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 575364863818353,
+							"parameters": {
+								"first-value": "cholesterolPenalty",
+								"comparison": 3,
+								"second-value": "maxRecommendedPenalty"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 325575102339966,
+							"parameters": {
+								"variable": "enemyCount",
+								"value": "cholesterolPenalty / 3"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 445236673970978,
+							"parameters": {
+								"variable": "spawnDelay",
+								"value": "minigameTimeLength / enemyCount"
+							}
+						}
+					],
+					"sid": 959837888308341
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 119024873055974
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 958715753639823,
+							"parameters": {
+								"variable": "enemyCount",
+								"value": "cholesterolPenalty / 2"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 739171911769163,
+							"parameters": {
+								"variable": "spawnDelay",
+								"value": "minigameTimeLength / enemyCount"
+							}
+						}
+					],
+					"sid": 149873415071655
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -142,14 +311,6 @@
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
 					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Score",
-					"sid": 774406672952283,
-					"parameters": {
-						"text": "\"Score: \" & Score"
-					}
 				}
 			],
 			"sid": 558961683089102
@@ -158,12 +319,19 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-click",
+					"id": "mouse-button-is-down",
 					"objectClass": "Mouse",
-					"sid": 602415280503453,
+					"sid": 527895603936277,
 					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked"
+						"mouse-button": "left"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 938637058272657,
+					"parameters": {
+						"interval-seconds": "1 / fireRate"
 					}
 				}
 			],
@@ -183,6 +351,10 @@
 			"sid": 369131599250212
 		},
 		{
+			"eventType": "comment",
+			"text": "When enemy dies"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -196,18 +368,9 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-instvar",
-					"objectClass": "monster",
-					"sid": 877186056959573,
-					"parameters": {
-						"instance-variable": "Health",
-						"value": "1"
-					}
-				},
-				{
 					"id": "spawn-another-object",
 					"objectClass": "bullet",
-					"sid": 440877552235929,
+					"sid": 355116395852529,
 					"parameters": {
 						"object": "explosion",
 						"layer": "0",
@@ -218,7 +381,29 @@
 				{
 					"id": "destroy",
 					"objectClass": "bullet",
-					"sid": 119362863440177
+					"sid": 630532857558293
+				},
+				{
+					"type": "comment",
+					"text": "Decrease cholesterol penalty"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 975919385732583,
+					"parameters": {
+						"variable": "cholesterolPenalty",
+						"value": "clamp(cholesterolPenalty - 1, 0, Infinity)"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Destroy enemy"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "monster",
+					"sid": 606395235402677
 				}
 			],
 			"sid": 360263313651711
@@ -249,43 +434,21 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "monster",
-					"sid": 895321809484312,
-					"parameters": {
-						"instance-variable": "Health",
-						"comparison": 3,
-						"value": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "monster",
-					"sid": 901742076740986
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 397114504196726,
-					"parameters": {
-						"variable": "Score",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 687552490082817
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 763555465610780,
+					"sid": 218953556545646,
 					"parameters": {
-						"interval-seconds": "3"
+						"interval-seconds": "spawnDelay * 2"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 849474245229012,
+					"parameters": {
+						"first-value": "enemiesSpawned",
+						"comparison": 2,
+						"second-value": "enemyCount"
 					}
 				}
 			],
@@ -293,14 +456,53 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 286648218386163,
+					"sid": 803612866527237,
 					"parameters": {
 						"object-to-create": "monster",
 						"layer": "0",
 						"x": "LayoutWidth + 100",
-						"y": "random(LayoutHeight)",
+						"y": "random(verticalSpawnMin,verticalSpawnMax)",
 						"create-hierarchy": false,
 						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 861628488155379,
+					"parameters": {
+						"variable": "enemiesSpawned",
+						"value": "enemiesSpawned + 1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 364267991154755,
+					"parameters": {
+						"seconds": "spawnDelay"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 481412424034189,
+					"parameters": {
+						"object-to-create": "monster",
+						"layer": "0",
+						"x": "-100",
+						"y": "random(verticalSpawnMin, verticalSpawnMax)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 894974711388563,
+					"parameters": {
+						"variable": "enemiesSpawned",
+						"value": "enemiesSpawned + 1"
 					}
 				}
 			],
@@ -323,6 +525,31 @@
 					"id": "destroy",
 					"objectClass": "player",
 					"sid": 356739896163938
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 687589402516083,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 234615786874555,
+					"parameters": {
+						"variable": "enemiesSpawned",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 930685221036976,
+					"parameters": {
+						"layout": "Cycle End"
+					}
 				}
 			],
 			"sid": 783798152601157
