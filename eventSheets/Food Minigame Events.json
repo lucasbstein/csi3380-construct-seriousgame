@@ -168,6 +168,27 @@
 				}
 			],
 			"sid": 473995366391179
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "FoodSprite",
+					"sid": 499372182219744
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "FoodSprite",
+					"sid": 483807392788307,
+					"parameters": {
+						"frame-number": "random(0,4)"
+					}
+				}
+			],
+			"sid": 482688645346630
 		}
 	],
 	"sid": 910140943358615
