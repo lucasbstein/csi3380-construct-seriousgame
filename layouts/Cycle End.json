@@ -22,7 +22,7 @@
 							1,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -33,7 +33,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 32,
-						"y": 32,
+						"y": 128,
 						"width": 800,
 						"height": 49,
 						"originX": 0,
@@ -51,7 +51,7 @@
 				{
 					"type": "HeartAttackChance",
 					"properties": {
-						"text": "Heart Attack Chance: 0%",
+						"text": "Risk of Heart Attack: 0%",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 20,
@@ -64,7 +64,7 @@
 							1,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -74,9 +74,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 32,
-						"y": 96,
-						"width": 384,
+						"x": 256,
+						"y": 192,
+						"width": 352,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,

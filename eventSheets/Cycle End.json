@@ -50,6 +50,10 @@
 				},
 				{
 					"type": "comment",
+					"text": "Age group fact here"
+				},
+				{
+					"type": "comment",
 					"text": "Calculate base heart attack chance increase due to age"
 				},
 				{
@@ -156,9 +160,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "HeartAttackChance",
-					"sid": 124242069544671,
+					"sid": 219073619511459,
 					"parameters": {
-						"text": "\"Heart Attack Chance:\" & heartAttackChance & \"%\""
+						"text": "\"Heart Attack Chance: \" & heartAttackChance & \"%\""
 					}
 				},
 				{
