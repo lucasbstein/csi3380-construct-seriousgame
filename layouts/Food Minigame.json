@@ -150,8 +150,8 @@
 					"world": {
 						"x": 64,
 						"y": 64,
-						"width": 32,
-						"height": 32,
+						"width": 64,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

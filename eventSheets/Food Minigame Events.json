@@ -204,6 +204,15 @@
 				{
 					"type": "comment",
 					"text": "Show and set timer on layout start"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "SlidingBarSprite",
+					"sid": 489295228250684,
+					"parameters": {
+						"x": "SlidingBarEmptySprite.X",
+						"y": "SlidingBarEmptySprite.Y"
+					}
 				}
 			],
 			"sid": 670802842258538
