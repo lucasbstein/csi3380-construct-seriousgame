@@ -81,10 +81,6 @@
 				{
 					"callFunction": "UpdatePlayerInfo",
 					"sid": 853983439658320
-				},
-				{
-					"callFunction": "ChangeNextScene",
-					"sid": 285555909480032
 				}
 			],
 			"sid": 729976114797491,
@@ -134,12 +130,11 @@
 							"text": "Update player information on screen"
 						},
 						{
-							"callFunction": "UpdatePlayerInfo",
-							"sid": 352649042110877
+							"callFunction": "ChangeNextScene",
+							"sid": 506368274896577
 						}
 					],
-					"sid": 417721128860965,
-					"disabled": true
+					"sid": 417721128860965
 				}
 			]
 		},
@@ -212,11 +207,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 981875564625493,
+							"sid": 624452064542809,
 							"parameters": {
-								"variable": "cholesterolPenalty",
+								"variable": "heartAttackChance",
 								"comparison": 5,
-								"value": "maxRecommendedPenalty * .75"
+								"value": "75"
 							}
 						}
 					],
@@ -238,11 +233,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 318026525068756,
+							"sid": 577300741119609,
 							"parameters": {
-								"variable": "cholesterolPenalty",
+								"variable": "heartAttackChance",
 								"comparison": 4,
-								"value": "maxRecommendedPenalty * .50"
+								"value": "50"
 							}
 						}
 					],
@@ -264,11 +259,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 895337124049634,
+							"sid": 421588543097652,
 							"parameters": {
-								"variable": "cholesterolPenalty",
+								"variable": "heartAttackChance",
 								"comparison": 4,
-								"value": "maxRecommendedPenalty * .25"
+								"value": "25"
 							}
 						}
 					],
@@ -290,11 +285,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 630014145461981,
+							"sid": 759935764437420,
 							"parameters": {
-								"variable": "cholesterolPenalty",
+								"variable": "heartAttackChance",
 								"comparison": 4,
-								"value": "maxRecommendedPenalty * .10"
+								"value": "10"
 							}
 						}
 					],
@@ -316,11 +311,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 276499341200743,
+							"sid": 208736551947191,
 							"parameters": {
-								"variable": "cholesterolPenalty",
+								"variable": "heartAttackChance",
 								"comparison": 3,
-								"value": "maxRecommendedPenalty * .5"
+								"value": "5"
 							}
 						}
 					],
@@ -352,7 +347,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 824982912117134,
+					"sid": 519772799141772,
 					"parameters": {
 						"variable": "cholesterolPenalty",
 						"value": "0"

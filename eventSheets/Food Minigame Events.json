@@ -81,7 +81,7 @@
 			"eventType": "variable",
 			"name": "cholesterolPenalty",
 			"type": "number",
-			"initialValue": "500",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -369,9 +369,9 @@
 						{
 							"id": "set-animation-frame",
 							"objectClass": "FoodSprite",
-							"sid": 397355347590437,
+							"sid": 714210968380983,
 							"parameters": {
-								"frame-number": "random(0,5)"
+								"frame-number": "random(0,6)"
 							}
 						},
 						{
@@ -403,9 +403,9 @@
 						{
 							"id": "set-animation-frame",
 							"objectClass": "FoodSprite",
-							"sid": 876352420525578,
+							"sid": 184287030910951,
 							"parameters": {
-								"frame-number": "random(6,11)"
+								"frame-number": "random(6,12)"
 							}
 						},
 						{

@@ -157,7 +157,10 @@
 			"LowerFat",
 			"UpperFat",
 			"SlidingBarEmptySprite",
-			"SlidingBarSprite"
+			"SlidingBarSprite",
+			"keyboard_key_left",
+			"Text",
+			"mouseClick"
 		],
 		"subfolders": []
 	},
