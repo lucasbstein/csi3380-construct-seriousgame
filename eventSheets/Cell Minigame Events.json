@@ -471,11 +471,11 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 849474245229012,
+					"sid": 169211747901410,
 					"parameters": {
 						"first-value": "enemiesSpawned",
 						"comparison": 2,
-						"second-value": "enemyCount"
+						"second-value": "clamp(enemyCount, 15, Infinity)"
 					}
 				}
 			],

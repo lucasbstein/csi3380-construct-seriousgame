@@ -81,7 +81,7 @@
 			"eventType": "variable",
 			"name": "cholesterolPenalty",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "500",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
