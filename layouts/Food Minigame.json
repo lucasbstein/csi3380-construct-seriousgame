@@ -7,6 +7,35 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "SlidingBarEmptySprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 646,
+						"y": 30,
+						"width": 200,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": -1
+					}
+				},
+				{
 					"type": "GroundSprite",
 					"properties": {
 						"initially-visible": true,
@@ -77,8 +106,8 @@
 					"world": {
 						"x": 64,
 						"y": 352,
-						"width": 32,
-						"height": 32,
+						"width": 46.08,
+						"height": 46.08,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -138,7 +167,7 @@
 				{
 					"type": "PenaltyCounter",
 					"properties": {
-						"text": "Penalty: 0",
+						"text": "Penalty:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 20,
@@ -161,12 +190,41 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 544,
+						"x": 477,
 						"y": 0,
 						"width": 224,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SlidingBarSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 646,
+						"y": 30,
+						"width": 200,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

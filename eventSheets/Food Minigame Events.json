@@ -234,8 +234,17 @@
 					"id": "set-text",
 					"objectClass": "PenaltyCounter",
 					"sid": 857141035096780,
+					"disabled": true,
 					"parameters": {
 						"text": "\"Penalty: \" & cholesterolPenalty"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "SlidingBarSprite",
+					"sid": 268611100688729,
+					"parameters": {
+						"width": "clamp(cholesterolPenalty,0,maxRecommendedPenalty)"
 					}
 				}
 			],

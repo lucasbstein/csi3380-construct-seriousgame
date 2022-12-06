@@ -155,7 +155,9 @@
 			"Age",
 			"HeartAttackChance",
 			"LowerFat",
-			"UpperFat"
+			"UpperFat",
+			"SlidingBarEmptySprite",
+			"SlidingBarSprite"
 		],
 		"subfolders": []
 	},

@@ -74,6 +74,16 @@
 			"sid": 754227550923513
 		},
 		{
+			"eventType": "variable",
+			"name": "RandomEnemySize",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 266050703097683
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -454,6 +464,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 475295977194196,
+					"parameters": {
+						"variable": "RandomEnemySize",
+						"value": "random(32,80)"
+					}
+				},
+				{
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 803612866527237,
@@ -464,6 +483,15 @@
 						"y": "random(verticalSpawnMin,verticalSpawnMax)",
 						"create-hierarchy": false,
 						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "monster",
+					"sid": 587959235817294,
+					"parameters": {
+						"width": "RandomEnemySize",
+						"height": "RandomEnemySize"
 					}
 				},
 				{
@@ -484,6 +512,15 @@
 					}
 				},
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 660927072972850,
+					"parameters": {
+						"variable": "RandomEnemySize",
+						"value": "random(32,80)"
+					}
+				},
+				{
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 481412424034189,
@@ -494,6 +531,15 @@
 						"y": "random(verticalSpawnMin, verticalSpawnMax)",
 						"create-hierarchy": false,
 						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "monster",
+					"sid": 492095950847269,
+					"parameters": {
+						"width": "RandomEnemySize",
+						"height": "RandomEnemySize"
 					}
 				},
 				{
