@@ -251,9 +251,9 @@
 				{
 					"id": "set-width",
 					"objectClass": "SlidingBarSprite",
-					"sid": 268611100688729,
+					"sid": 790252207809358,
 					"parameters": {
-						"width": "clamp(cholesterolPenalty,0,maxRecommendedPenalty)"
+						"width": "clamp(cholesterolPenalty,0,Infinity)"
 					}
 				}
 			],

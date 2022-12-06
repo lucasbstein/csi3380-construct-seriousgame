@@ -7,35 +7,6 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "SlidingBarEmptySprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 13,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 646,
-						"y": 30,
-						"width": 200,
-						"height": 32,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": -1
-					}
-				},
-				{
 					"type": "GroundSprite",
 					"properties": {
 						"initially-visible": true,
@@ -165,9 +136,67 @@
 					}
 				},
 				{
+					"type": "SlidingBarEmptySprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 161.28654963926684,
+						"y": 31.51225603117694,
+						"width": 200,
+						"height": 16,
+						"originX": 0,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 1
+					}
+				},
+				{
+					"type": "SlidingBarSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 431.7261081350475,
+						"y": 23.377384401219587,
+						"width": 200,
+						"height": 16,
+						"originX": 0,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 2
+					}
+				},
+				{
 					"type": "PenaltyCounter",
 					"properties": {
-						"text": "Penalty:",
+						"text": "Cholesterol:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 20,
@@ -190,8 +219,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 477,
-						"y": 0,
+						"x": -30,
+						"y": -7.50124308111372,
 						"width": 224,
 						"height": 64,
 						"originX": 0,
@@ -203,42 +232,13 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SlidingBarSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 21,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 646,
-						"y": 30,
-						"width": 200,
-						"height": 32,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
+						"zElevation": 2
 					}
 				},
 				{
 					"type": "FoodCounter",
 					"properties": {
-						"text": "Collect: 10",
+						"text": "Collect Food: 10",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 20,
@@ -262,7 +262,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 320,
-						"y": 0,
+						"y": 38,
 						"width": 192,
 						"height": 64,
 						"originX": 0,

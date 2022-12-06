@@ -94,6 +94,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-position",
+					"objectClass": "SlidingBarSprite",
+					"sid": 883192059289904,
+					"parameters": {
+						"x": "SlidingBarEmptySprite.X",
+						"y": "SlidingBarEmptySprite.Y"
+					}
+				},
+				{
 					"type": "comment",
 					"text": "Show and set timer on layout start"
 				},
@@ -321,6 +330,14 @@
 						"x": "Mouse.X",
 						"y": "Mouse.Y"
 					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "SlidingBarSprite",
+					"sid": 317974587778948,
+					"parameters": {
+						"width": "clamp(cholesterolPenalty,0,Infinity)"
+					}
 				}
 			],
 			"sid": 558961683089102
@@ -400,10 +417,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 975919385732583,
+					"sid": 326899031727886,
 					"parameters": {
 						"variable": "cholesterolPenalty",
-						"value": "clamp(cholesterolPenalty - 1, 0, Infinity)"
+						"value": "clamp(cholesterolPenalty - 2, 0, Infinity)"
 					}
 				},
 				{

@@ -77,6 +77,10 @@
 						"variable": "heartAttackChance",
 						"value": "heartAttackChance + (clamp(cholesterolPenalty - maxRecommendedPenalty, 0, Infinity) / 25)"
 					}
+				},
+				{
+					"callFunction": "UpdatePlayerInfo",
+					"sid": 853983439658320
 				}
 			],
 			"sid": 729976114797491,
@@ -161,6 +165,7 @@
 					"id": "set-text",
 					"objectClass": "HeartAttackChance",
 					"sid": 219073619511459,
+					"disabled": true,
 					"parameters": {
 						"text": "\"Heart Attack Chance: \" & heartAttackChance & \"%\""
 					}
@@ -191,7 +196,139 @@
 					}
 				}
 			],
-			"sid": 736940287175181
+			"sid": 736940287175181,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 981875564625493,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"comparison": 5,
+								"value": "maxRecommendedPenalty * .75"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 383906762306422,
+							"parameters": {
+								"text": "\"Heart Attack Chance: VERY HIGH\""
+							}
+						}
+					],
+					"sid": 441825480423629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 318026525068756,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"comparison": 4,
+								"value": "maxRecommendedPenalty * .50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 476609207851783,
+							"parameters": {
+								"text": "\"Heart Attack Chance: HIGH\""
+							}
+						}
+					],
+					"sid": 178639359751272
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 895337124049634,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"comparison": 4,
+								"value": "maxRecommendedPenalty * .25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 210640741610725,
+							"parameters": {
+								"text": "\"Heart Attack Chance: MEDIUM\""
+							}
+						}
+					],
+					"sid": 302828805681629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 630014145461981,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"comparison": 4,
+								"value": "maxRecommendedPenalty * .10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 484586216187232,
+							"parameters": {
+								"text": "\"Heart Attack Chance: LOW\""
+							}
+						}
+					],
+					"sid": 368275359971883
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 276499341200743,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"comparison": 3,
+								"value": "maxRecommendedPenalty * .5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 868403136983142,
+							"parameters": {
+								"text": "\"Heart Attack Chance: VERY LOW\""
+							}
+						}
+					],
+					"sid": 374788694751075
+				}
+			]
 		}
 	],
 	"sid": 451131651606405
