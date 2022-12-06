@@ -7,6 +7,50 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "FoodSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 17,
+					"instanceVariables": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": true,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 6,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 64,
+						"y": 64,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": -5
+					}
+				},
+				{
 					"type": "GroundSprite",
 					"properties": {
 						"initially-visible": true,
@@ -92,50 +136,6 @@
 					}
 				},
 				{
-					"type": "FoodSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 17,
-					"instanceVariables": {},
-					"behaviors": {
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": true,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 6,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 64,
-						"y": 64,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "keyboard_key_left",
 					"properties": {
 						"initially-visible": true,
@@ -148,10 +148,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 69,
-						"y": 433,
-						"width": 63.968749152243504,
-						"height": 63.968749152243504,
+						"x": 31.831867647697194,
+						"y": 448.7789241118267,
+						"width": 38.722470573320834,
+						"height": 42.22889815372679,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -177,10 +177,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 150.65130900259078,
-						"y": 433,
-						"width": 63.968749152243504,
-						"height": 63.968749152243504,
+						"x": 79.12018636230991,
+						"y": 448.77892411182665,
+						"width": 38.722470573320834,
+						"height": 42.22889815372679,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -219,8 +219,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 198.44120704010538,
-						"y": 424.4246520996094,
+						"x": 110.07923201387607,
+						"y": 437.0477913890707,
 						"width": 200,
 						"height": 30,
 						"originX": 0,
@@ -249,7 +249,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 161.28654963926684,
-						"y": 31.51225603117694,
+						"y": 402.4922940381238,
 						"width": 200,
 						"height": 16,
 						"originX": 0,
@@ -277,8 +277,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 431.7261081350475,
-						"y": 23.377384401219587,
+						"x": 394.55797578274473,
+						"y": 402.07156308505944,
 						"width": 200,
 						"height": 16,
 						"originX": 0,
@@ -320,7 +320,7 @@
 					"behaviors": {},
 					"world": {
 						"x": -30,
-						"y": -7.50124308111372,
+						"y": 363.47879492583314,
 						"width": 224,
 						"height": 64,
 						"originX": 0,
@@ -361,9 +361,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 320,
-						"y": 38,
-						"width": 192,
+						"x": 288,
+						"y": 411.7922869035129,
+						"width": 269.1414067689303,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,
