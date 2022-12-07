@@ -103,6 +103,15 @@
 					}
 				},
 				{
+					"id": "set-position",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 977826462944624,
+					"parameters": {
+						"x": "SlidingBarEmptySprite.X",
+						"y": "SlidingBarEmptySprite.Y"
+					}
+				},
+				{
 					"type": "comment",
 					"text": "Show and set timer on layout start"
 				},
@@ -338,9 +347,80 @@
 					"parameters": {
 						"width": "clamp(cholesterolPenalty,0,Infinity)"
 					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 689066112758432,
+					"parameters": {
+						"width": "clamp(cholesterolPenalty,0,Infinity)"
+					}
 				}
 			],
 			"sid": 558961683089102
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 854360691963541,
+					"parameters": {
+						"variable": "cholesterolPenalty",
+						"comparison": 5,
+						"value": "maxRecommendedPenalty"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SlidingBarSprite",
+					"sid": 451328523616513,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 533149643919062,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 548748156897899
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 618876221805152
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SlidingBarSprite",
+					"sid": 150680710605708,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 588068211387063,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 945135397284943
 		},
 		{
 			"eventType": "block",

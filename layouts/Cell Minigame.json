@@ -655,6 +655,35 @@
 					}
 				},
 				{
+					"type": "SlidingBarSpriteBad",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 36,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 544,
+						"y": 75,
+						"width": 200,
+						"height": 16,
+						"originX": 0,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 2
+					}
+				},
+				{
 					"type": "TimerCell",
 					"properties": {
 						"text": "30",

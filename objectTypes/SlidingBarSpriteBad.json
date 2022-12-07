@@ -1,7 +1,7 @@
 {
-	"name": "SlidingBarSprite",
+	"name": "SlidingBarSpriteBad",
 	"plugin-id": "Sprite",
-	"sid": 970245361753478,
+	"sid": 757116431618596,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7913412,
+						"imageSpriteId": 8563431,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 431648005516055,
+				"sid": 605061541675782,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

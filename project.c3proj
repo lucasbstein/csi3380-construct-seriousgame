@@ -160,7 +160,8 @@
 			"SlidingBarSprite",
 			"keyboard_key_left",
 			"Text",
-			"mouseClick"
+			"mouseClick",
+			"SlidingBarSpriteBad"
 		],
 		"subfolders": []
 	},

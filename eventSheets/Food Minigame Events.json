@@ -213,6 +213,23 @@
 						"x": "SlidingBarEmptySprite.X",
 						"y": "SlidingBarEmptySprite.Y"
 					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 973592188833677,
+					"parameters": {
+						"x": "SlidingBarEmptySprite.X",
+						"y": "SlidingBarEmptySprite.Y"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 607602012933423,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 670802842258538
@@ -255,9 +272,53 @@
 					"parameters": {
 						"width": "clamp(cholesterolPenalty,0,Infinity)"
 					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "SlidingBarSpriteBad",
+					"sid": 377111217258934,
+					"parameters": {
+						"width": "clamp(cholesterolPenalty,0,Infinity)"
+					}
 				}
 			],
-			"sid": 259910659375501
+			"sid": 259910659375501,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 267966261796890,
+							"parameters": {
+								"variable": "cholesterolPenalty",
+								"comparison": 5,
+								"value": "maxRecommendedPenalty"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "SlidingBarSprite",
+							"sid": 509929580597240,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SlidingBarSpriteBad",
+							"sid": 453732655352136,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 738067513982621
+				}
+			]
 		},
 		{
 			"eventType": "block",

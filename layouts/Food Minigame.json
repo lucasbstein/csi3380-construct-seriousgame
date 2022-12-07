@@ -336,6 +336,35 @@
 					}
 				},
 				{
+					"type": "SlidingBarSpriteBad",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 35,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 528.2287806068657,
+						"y": 383.2654113769531,
+						"width": 200,
+						"height": 16,
+						"originX": 0,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 2
+					}
+				},
+				{
 					"type": "FoodCounter",
 					"properties": {
 						"text": "Collect Food: 10",
