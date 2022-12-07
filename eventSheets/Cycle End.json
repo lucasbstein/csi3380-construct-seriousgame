@@ -77,10 +77,6 @@
 						"variable": "heartAttackChance",
 						"value": "heartAttackChance + (clamp(cholesterolPenalty - maxRecommendedPenalty, 0, Infinity) / 25)"
 					}
-				},
-				{
-					"callFunction": "UpdatePlayerInfo",
-					"sid": 853983439658320
 				}
 			],
 			"sid": 729976114797491,
@@ -96,6 +92,16 @@
 								"first-value": "random(0.0,100.0)",
 								"comparison": 3,
 								"second-value": "heartAttackChance"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 255142826797266,
+							"parameters": {
+								"variable": "age",
+								"comparison": 2,
+								"value": "100"
 							}
 						}
 					],
@@ -124,17 +130,69 @@
 							"sid": 901623414812294
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 417721128860965,
+					"children": [
 						{
-							"type": "comment",
-							"text": "Update player information on screen"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 735515242020241,
+									"parameters": {
+										"variable": "age",
+										"comparison": 2,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Update player information on screen"
+								},
+								{
+									"callFunction": "UpdatePlayerInfo",
+									"sid": 804247140956620
+								},
+								{
+									"callFunction": "ChangeNextScene",
+									"sid": 948825801735564
+								}
+							],
+							"sid": 443149380717699
 						},
 						{
-							"callFunction": "ChangeNextScene",
-							"sid": 506368274896577
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 315139360653894
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Age",
+									"sid": 321996205666398,
+									"parameters": {
+										"text": "\"You died of old age at \" & age"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "HeartAttackChance",
+									"sid": 163844122444452,
+									"parameters": {
+										"text": "\"You didn't die of a heart attack. Congrats!\""
+									}
+								}
+							],
+							"sid": 382107242475343
 						}
-					],
-					"sid": 417721128860965
+					]
 				}
 			]
 		},
@@ -207,11 +265,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 624452064542809,
+							"sid": 682883062030976,
 							"parameters": {
 								"variable": "heartAttackChance",
 								"comparison": 5,
-								"value": "75"
+								"value": "50"
 							}
 						}
 					],
@@ -233,11 +291,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 577300741119609,
+							"sid": 735252498866701,
 							"parameters": {
 								"variable": "heartAttackChance",
-								"comparison": 4,
-								"value": "50"
+								"comparison": 5,
+								"value": "35"
 							}
 						}
 					],
@@ -259,11 +317,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 421588543097652,
+							"sid": 672382563151186,
 							"parameters": {
 								"variable": "heartAttackChance",
-								"comparison": 4,
-								"value": "25"
+								"comparison": 5,
+								"value": "20"
 							}
 						}
 					],
