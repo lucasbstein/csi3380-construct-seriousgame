@@ -265,6 +265,110 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
+							"sid": 424877611044386,
+							"parameters": {
+								"variable": "heartAttackChance",
+								"comparison": 3,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 974022302740661,
+							"parameters": {
+								"text": "\"Heart Attack Chance: VERY LOW\""
+							}
+						}
+					],
+					"sid": 437313007567655
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 456791135881567,
+							"parameters": {
+								"variable": "heartAttackChance",
+								"comparison": 4,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 152348731220083,
+							"parameters": {
+								"text": "\"Heart Attack Chance: LOW\""
+							}
+						}
+					],
+					"sid": 513107466600479
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 318900956112038,
+							"parameters": {
+								"variable": "heartAttackChance",
+								"comparison": 5,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 482033322531540,
+							"parameters": {
+								"text": "\"Heart Attack Chance: MEDIUM\""
+							}
+						}
+					],
+					"sid": 518560239290866
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 162609498802001,
+							"parameters": {
+								"variable": "heartAttackChance",
+								"comparison": 5,
+								"value": "35"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "HeartAttackChance",
+							"sid": 925914905091051,
+							"parameters": {
+								"text": "\"Heart Attack Chance: HIGH\""
+							}
+						}
+					],
+					"sid": 463630875796863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
 							"sid": 682883062030976,
 							"parameters": {
 								"variable": "heartAttackChance",
@@ -284,110 +388,6 @@
 						}
 					],
 					"sid": 441825480423629
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 735252498866701,
-							"parameters": {
-								"variable": "heartAttackChance",
-								"comparison": 5,
-								"value": "35"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "HeartAttackChance",
-							"sid": 476609207851783,
-							"parameters": {
-								"text": "\"Heart Attack Chance: HIGH\""
-							}
-						}
-					],
-					"sid": 178639359751272
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 672382563151186,
-							"parameters": {
-								"variable": "heartAttackChance",
-								"comparison": 5,
-								"value": "20"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "HeartAttackChance",
-							"sid": 210640741610725,
-							"parameters": {
-								"text": "\"Heart Attack Chance: MEDIUM\""
-							}
-						}
-					],
-					"sid": 302828805681629
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 759935764437420,
-							"parameters": {
-								"variable": "heartAttackChance",
-								"comparison": 4,
-								"value": "10"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "HeartAttackChance",
-							"sid": 484586216187232,
-							"parameters": {
-								"text": "\"Heart Attack Chance: LOW\""
-							}
-						}
-					],
-					"sid": 368275359971883
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 208736551947191,
-							"parameters": {
-								"variable": "heartAttackChance",
-								"comparison": 3,
-								"value": "5"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "HeartAttackChance",
-							"sid": 868403136983142,
-							"parameters": {
-								"text": "\"Heart Attack Chance: VERY LOW\""
-							}
-						}
-					],
-					"sid": 374788694751075
 				}
 			]
 		},
