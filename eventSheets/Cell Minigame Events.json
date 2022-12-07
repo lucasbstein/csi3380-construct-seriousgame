@@ -47,7 +47,7 @@
 			"eventType": "variable",
 			"name": "fireRate",
 			"type": "number",
-			"initialValue": "5",
+			"initialValue": "4",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -169,6 +169,23 @@
 						"variable": "verticalSpawnMax",
 						"value": "480 - (160 * (HeartAttackChance / 100))"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 476631242064123,
+					"parameters": {
+						"variable": "startMinigame",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 878661010759992,
+					"parameters": {
+						"time-scale": "0"
+					}
 				}
 			],
 			"sid": 212152066541909,
@@ -250,6 +267,14 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 171384114104688,
+					"parameters": {
+						"variable": "startMinigame"
+					}
+				},
+				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
 					"sid": 806993940458290,
@@ -274,6 +299,56 @@
 				}
 			],
 			"sid": 331351003709165
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 619595029412195,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 292215994859377,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 959537553271998,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 463838439922665,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 818846113401995,
+					"parameters": {
+						"variable": "startMinigame",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 949096173852011,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -358,6 +433,30 @@
 				}
 			],
 			"sid": 558961683089102
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 923313350995236,
+					"parameters": {
+						"variable": "startMinigame"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 472233127497259,
+					"parameters": {
+						"time-scale": "1.0"
+					}
+				}
+			],
+			"sid": 867880151848820
 		},
 		{
 			"eventType": "block",

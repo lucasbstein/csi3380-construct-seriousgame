@@ -192,6 +192,16 @@
 			"sid": 690895816102633
 		},
 		{
+			"eventType": "variable",
+			"name": "startMinigame",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 183605948493060
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -229,6 +239,15 @@
 					"sid": 607602012933423,
 					"parameters": {
 						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 600727740480401,
+					"parameters": {
+						"variable": "startMinigame",
+						"value": "false"
 					}
 				}
 			],
@@ -324,6 +343,40 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 899802881370604,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 253074429662892,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 934637392850130,
+					"parameters": {
+						"variable": "startMinigame",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 172481303554744,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
 					"sid": 370465912216759,
@@ -369,6 +422,14 @@
 					"parameters": {
 						"interval-seconds": "0.4"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 509522402308360,
+					"parameters": {
+						"variable": "startMinigame"
+					}
 				}
 			],
 			"actions": [
@@ -379,7 +440,7 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 669283378697469,
+					"sid": 892332932771589,
 					"parameters": {
 						"object-to-create": "FoodSprite",
 						"layer": "0",

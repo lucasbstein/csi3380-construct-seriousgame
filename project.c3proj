@@ -88,6 +88,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Fade",
 			"name": "Fade",
 			"author": "Scirra",
@@ -122,14 +130,6 @@
 			"type": "behavior",
 			"id": "wrap",
 			"name": "Wrap",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -175,7 +175,8 @@
 		"items": [
 			"Food Minigame",
 			"Cell Minigame",
-			"Cycle End"
+			"Cycle End",
+			"Storage"
 		],
 		"subfolders": []
 	},
