@@ -47,7 +47,7 @@
 			"eventType": "variable",
 			"name": "fireRate",
 			"type": "number",
-			"initialValue": "2.25",
+			"initialValue": "5",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

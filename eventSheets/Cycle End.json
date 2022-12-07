@@ -111,6 +111,10 @@
 							"text": "Kill the player (dies of heart attack)"
 						},
 						{
+							"callFunction": "UpdatePlayerInfo",
+							"sid": 466428967868596
+						},
+						{
 							"id": "set-text",
 							"objectClass": "Age",
 							"sid": 589142880638315,
@@ -291,10 +295,10 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 456791135881567,
+							"sid": 383372553335909,
 							"parameters": {
 								"variable": "heartAttackChance",
-								"comparison": 4,
+								"comparison": 5,
 								"value": "10"
 							}
 						}
