@@ -212,10 +212,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 325575102339966,
+							"sid": 776720899836092,
 							"parameters": {
 								"variable": "enemyCount",
-								"value": "cholesterolPenalty / 3"
+								"value": "cholesterolPenalty / 3 + 1"
 							}
 						},
 						{
@@ -243,10 +243,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 958715753639823,
+							"sid": 772928000253063,
 							"parameters": {
 								"variable": "enemyCount",
-								"value": "cholesterolPenalty / 2"
+								"value": "cholesterolPenalty / 2 + 1"
 							}
 						},
 						{
