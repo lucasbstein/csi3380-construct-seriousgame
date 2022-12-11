@@ -295,11 +295,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 383372553335909,
+							"sid": 958360676647480,
 							"parameters": {
 								"variable": "heartAttackChance",
-								"comparison": 5,
-								"value": "10"
+								"comparison": 4,
+								"value": "5"
 							}
 						}
 					],
